@@ -37,23 +37,22 @@ void resenie (float num1, float num2, float num3)
 {
     float disc = num2 * num2 - 4 * num1 * num3;
 
-    if (disc < 0) Console.WriteLine("Нету действительный корней, дискримнат получился меньше 0");
+    if (disc < 0) Console.WriteLine("т.к D<0 , то корней нету");
     else if (disc > 0)
     {
         double x1 = (-num2 + Math.Sqrt(disc)) / 2 * num1;
         double x2 = (-num2 - Math.Sqrt(disc)) / 2 * num1;
-        Console.WriteLine($"У уравнения 2 действительного корня. \n 1){x1}\n 2){x2}");
+        Console.WriteLine($"т.к D>0, то корней будет 2\" \n 1) {x1}\n 2) {x2}");
     }
-    else Console.WriteLine($"У уравнения один корень. \n 1){-num2 / 2 * num1}");
+    else Console.WriteLine($"т.к D=0, то корень будет 1один \n 1) {-num2 / 2 * num1}");
 }
 //Решение корней с решением
 void resenieSolution(double num1, float num2, float num3)
 {
     double discr = num2 * num2 - 4 * num1 * num3 ;
-
+    Console.Write($"\n\nD=b^2-4ac   D={num2}^2 -4*{num1}*{num3}\t={discr}");
     if (discr > 0)
     {
-        Console.Write($"\n\nD=b^2-4ac   D={num2}^2 -4*{num1}*{num3}\t={discr}");
         double x1 = Math.Round((-8.4 + Math.Sqrt(discr)) / 2 * 3, 3);
         double x2 = Math.Round((-8.4 - Math.Sqrt(discr)) / 2 * 3, 3);
         Console.Write("\n\n'т.к D>0, то корней будет 2" +
@@ -67,21 +66,23 @@ void resenieSolution(double num1, float num2, float num3)
             $"\n    ------  =\t------------ = {x2}" +
             "\n      2a            2*3 ");
 
-        Console.WriteLine($"Ответ: x1={x1} x2={x2}\n");
+        Console.WriteLine($"\n\nОтвет: x1={x1} x2={x2}\n");
     }
-    else if (discr ==0)
+    else if (discr == 0)
     {
-        double x1 = Math.Round(-num2 /2*num1 ,3);
+        double x1 = Math.Round(-num2 / 2 * num1, 3);
 
         Console.Write("\n\n'т.к D=0, то корень будет 1" +
 
             $"\n\nx1 =  -b    \t  -{num2}" +
             $"\n    -----  =\t----- = {x1}" +
             $"\n      2a         2*{num1} \n");
+
+        Console.WriteLine($"\n\nОтвет: x1={x1}\n");
     }
 
-    else Console.WriteLine("Корней нету");
-}
+    else Console.WriteLine("т.к D<0 , то корней нету"); }
+
     //Быстрый ввод чисел
 void fastInput(string comand)
 {

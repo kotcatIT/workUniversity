@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Кинопортал</title>
+</head>
+
+<body>
+    <table class="layout">
+        <tr>
+            <!-- Шапка -->
+            <!-- Левая часть шапки -->
+            <td class="header-left">Левая часть шапки</td>
+            <!-- Правая часть шапки -->
+            <!-- Поиск -->
+            <td class="search" colspan="2">
+                <input type="text" id="searchInput" placeholder="Поиск">
+                <button id="searchButton">Искать</button>
+            </td>
+        </tr>
+
+        <tr>
+            <!-- Кинопортал -->
+            <td class="portal" colspan="2">
+                <nav>
+                    <ul class="horizontal-menu">
+                        <li><a href="#">Главная</a></li>
+                        <li><a href="#">Фильмы</a></li>
+                        <li><a href="#">Сериалы</a></li>
+                        <li><a href="#">Новости</a></li>
+                    </ul>
+                </nav>
+            </td>
+        </tr>
+        <tr>
+            <!-- Меню для Списка последних фильмов -->
+            <td class="menu" colspan="2">
+                <ul class="movie-list">
+                    <li>
+                        <img src="film1.jpg" alt="Фильм 1" width="356" height="120">
+                        <h3>Название фильма 1</h3>
+                        <p>Небольшой текст о фильме 1.</p>
+                    </li>
+                    <li>
+                        <img src="film2.jpg" alt="Фильм 2" width="356" height="120">
+                        <h3>Название фильма 2</h3>
+                        <p>Небольшой текст о фильме 2.</p>
+                    </li>
+                    <li>
+                        <img src="film3.jpg" alt="Фильм 3" width="356" height="120">
+                        <h3>Название фильма 3</h3>
+                        <p>Небольшой текст о фильме 3.</p>
+                    </li>
+                    <li>
+                        <img src="film4.jpg" alt="Фильм 4" width="356" height="120">
+                        <h3>Название фильма 4</h3>
+                        <p>Небольшой текст о фильме 4.</p>
+                    </li>
+                </ul>
+                <div class="watch-more-button">
+                    <button>Смотреть список дальше</button>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <!-- Кнопка "Смотреть дальше" для фильмов -->
+            <td class="button" colspan="2">
+                <a href="#" class="see-more">Смотреть дальше</a>
+            </td>
+        </tr>
+        <!-- Меню для блога -->
+        <tr>
+            <!-- Меню для блога -->
+            <td class="menu" colspan="2">
+                <ul class="blog-list">
+                    <li>
+                        <img src="article1.jpg" alt="Статья 1" width="356" height="240">
+                        <div class="overlay">
+                            <h3>Заголовок статьи 1</h3>
+                            <p>Текст статьи 1.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="article2.jpg" alt="Статья 2" width="356" height="240">
+                        <div class="overlay">
+                            <h3>Заголовок статьи 2</h3>
+                            <p>Текст статьи 2.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="article3.jpg" alt="Статья 3" width="356" height="240">
+                        <div class="overlay">
+                            <h3>Заголовок статьи 3</h3>
+                            <p>Текст статьи 3.</p>
+                        </div>
+                    </li>
+                </ul>
+                <div class="watch-more-button">
+                    <a href="films.html"><button>Смотреть список дальше</button></a>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <!-- Реклама -->
+            <td class="ad" colspan="2">
+                <!-- Баннер 1 -->
+                <a href="ссылка_на_рекламу1.html">
+                    <img src="баннер1.jpg" alt="Баннер рекламы 1" width="728" height="90">
+                </a>
+                <!-- Баннер 2 -->
+                <a href="ссылка_на_рекламу2.html">
+                    <img src="баннер2.jpg" alt="Баннер рекламы 2" width="728" height="90">
+                </a>
+            </td>
+        </tr>
+
+        <tr>
+            <!-- Реквизиты сайта -->
+            <td class="footer" colspan="2">
+                <p>Номер телефона: <a href="tel:899999999">899999999</a></p>
+                <p>Адрес: Город, Улица, Дом</p>
+                <p>Почта: <a href="mailto:test@test">test@test</a></p>
+                <!-- Другая информация о реквизитах сайта -->
+            </td>
+        </tr>
+
+    </table>
+</body>
+
+</html>

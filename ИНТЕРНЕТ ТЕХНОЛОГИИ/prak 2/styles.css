@@ -1,0 +1,222 @@
+/* Стили для макета */
+
+.layout {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.layout td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+
+/* Стили для левой и правой части шапки */
+
+.header-left {
+    background-color: #333;
+    color: white;
+    font-size: 18px;
+    width: 20%;
+}
+
+.header-right {
+    background-color: #333;
+    color: white;
+    font-size: 18px;
+    width: 80%;
+}
+
+
+/* Стили для поиска */
+
+.search {
+    background-color: #f5f5f5;
+    font-size: 18px;
+}
+
+
+/* Стили для горизонтального меню */
+
+.horizontal-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    /* Сделаем элементы горизонтальными */
+}
+
+.horizontal-menu li {
+    flex: 1;
+    /* Распределение равного пространства между элементами */
+    text-align: center;
+    /* Выравнивание текста по центру */
+}
+
+.horizontal-menu a {
+    text-decoration: none;
+    color: #333;
+    /* Цвет текста */
+    padding: 10px 20px;
+    /* Отступы для элементов меню */
+    display: block;
+    /* Сделаем элементы меню блочными для кликабельности */
+    background-color: #f5f5f5;
+    /* Цвет фона */
+}
+
+.horizontal-menu a:hover {
+    background-color: #333;
+    /* Изменение цвета фона при наведении курсора */
+    color: white;
+    /* Изменение цвета текста при наведении курсора */
+}
+
+
+/* Стили для списка фильмов */
+
+.movie-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    /* Сделаем элементы горизонтальными */
+    flex-wrap: wrap;
+    /* Разрешим перенос элементов на новую строку */
+}
+
+.movie-list li {
+    margin-right: 20px;
+    /* Расстояние между фильмами */
+    text-align: center;
+    /* Выравнивание текста по центру */
+    width: calc(25% - 20px);
+    /* Разделение на 4 колонки с отступами между ними */
+    margin-bottom: 20px;
+    /* Отступ снизу для переноса элементов на новую строку */
+}
+
+.movie-list img {
+    max-width: 356px;
+    height: 120px;
+    /* Ограничиваем размер изображения */
+}
+
+.movie-list h3 {
+    font-size: 18px;
+    margin: 10px 0;
+    /* Отступы для заголовка фильма */
+}
+
+.movie-list p {
+    font-size: 14px;
+    color: #555;
+    /* Стили для текста о фильме */
+}
+
+
+/* Стили для блока блога */
+
+.blog-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    /* Сделаем элементы горизонтальными */
+    flex-wrap: wrap;
+    /* Разрешим перенос элементов на новую строку */
+}
+
+.blog-list li {
+    margin-right: 20px;
+    /* Расстояние между статьями */
+    text-align: center;
+    /* Выравнивание текста по центру */
+    width: calc(33.33% - 20px);
+    /* Разделение на 3 колонки с отступами между ними */
+    margin-bottom: 20px;
+    /* Отступ снизу для переноса элементов на новую строку */
+    position: relative;
+    /* Позиционирование для overlay */
+}
+
+.blog-list img {
+    max-width: 356px;
+    height: 240px;
+    /* Ограничиваем размер изображения */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    /* Полупрозрачный фон */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    opacity: 0;
+    /* По умолчанию скрыто */
+    transition: opacity 0.3s ease;
+    /* Плавное появление при наведении */
+}
+
+.blog-list li:hover .overlay {
+    opacity: 1;
+    /* Показать overlay при наведении курсора */
+}
+
+.overlay h3 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.overlay p {
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+
+/* Стили для рекламы */
+
+.ad {
+    background-color: #f5f5f5;
+    font-size: 18px;
+}
+
+
+/* Стили для реквизитов сайта */
+
+.footer {
+    background-color: #333;
+    color: white;
+    font-size: 16px;
+}
+
+
+/* Стили для кнопки "Смотреть список дальше" */
+
+.watch-more-button {
+    text-align: right;
+    margin-top: 20px;
+    /* Отступ сверху */
+}
+
+.watch-more-button button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.watch-more-button button:hover {
+    background-color: #555;
+}
