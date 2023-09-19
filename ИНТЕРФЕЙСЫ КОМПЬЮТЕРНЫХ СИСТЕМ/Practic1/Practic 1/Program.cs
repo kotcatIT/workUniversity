@@ -27,7 +27,8 @@ void helpMenu()
     Console.WriteLine("-help: Показать список доступных команд программы.");
     Console.WriteLine("-example: Показать пример использования команды input.");
     Console.WriteLine("-input (x1 x2 x3): Быстрый ввод коэффициентов уравнения (аналогично 'input').");
-    Console.WriteLine("-solution 0|1: 0-отключает решение в ответах. 1-включает решение в ответах(изначально стоит 0)\n");
+    Console.WriteLine("-0: отключает решение в ответах."+
+        "\n-1: включает решение в ответах \n");
 
 }
 
@@ -37,54 +38,56 @@ void resenie (float num1, float num2, float num3)
 {
     float disc = num2 * num2 - 4 * num1 * num3;
 
-    if (disc < 0) Console.WriteLine("т.к D<0 , то корней нету");
+    if (disc < 0) Console.WriteLine($"D={disc}\nт.к D<0, то корней нет");
     else if (disc > 0)
     {
-        double x1 = (-num2 + Math.Sqrt(disc)) / 2 * num1;
-        double x2 = (-num2 - Math.Sqrt(disc)) / 2 * num1;
-        Console.WriteLine($"т.к D>0, то корней будет 2\" \n 1) {x1}\n 2) {x2}");
+        double x1 = Math.Round((num2 + Math.Sqrt(disc)) / 2 * num1, 2);
+        double x2 = Math.Round((num2 - Math.Sqrt(disc)) / 2 * num1, 2);
+        Console.WriteLine($"D={disc}\nт.к D>0, то корней будет 2\" \n 1){x1}\n 2){x2}");
     }
-    else Console.WriteLine($"т.к D=0, то корень будет 1один \n 1) {-num2 / 2 * num1}");
+    else Console.WriteLine($"D={disc}\nт.к D=0, то корень будет 1 \n\n1){Math.Round(-num2 /( 2 * num1), 2)}");
 }
 //Решение корней с решением
 void resenieSolution(double num1, float num2, float num3)
 {
     double discr = num2 * num2 - 4 * num1 * num3 ;
-    Console.Write($"\n\nD=b^2-4ac   D={num2}^2 -4*{num1}*{num3}\t={discr}");
+    Console.Write($"\nD=b^2-4ac" +
+        $"\nD={num2}^2 -4*{num1}*{num3}={discr}");
     if (discr > 0)
     {
-        double x1 = Math.Round((-8.4 + Math.Sqrt(discr)) / 2 * 3, 3);
-        double x2 = Math.Round((-8.4 - Math.Sqrt(discr)) / 2 * 3, 3);
-        Console.Write("\n\n'т.к D>0, то корней будет 2" +
+        double x1 = Math.Round((num2 + Math.Sqrt(discr)) / 2 * num1,2);
+        double x2 = Math.Round((num2 - Math.Sqrt(discr)) / 2 * num1,2);
+
+        Console.Write("\n\nт.к D>0, возможных корней будет 2" +
             $"\n\nx1 =-b+√D    \t -{num2}+√{discr}" +
             $"\n    ------  =\t------------ = {x1}" +
             $"\n      2a            2*{num1} ");
 
 
         Console.Write("\n" +
-            $"\n\nx2 =-b-√D    \t -8.4-√{discr}" +
+            $"\n\nx2 =-b-√D    \t -{num2}-√{discr}" +
             $"\n    ------  =\t------------ = {x2}" +
-            "\n      2a            2*3 ");
+            "\n      2a            2*{num1} ");
 
         Console.WriteLine($"\n\nОтвет: x1={x1} x2={x2}\n");
     }
     else if (discr == 0)
     {
-        double x1 = Math.Round(-num2 / 2 * num1, 3);
+        double x1 = Math.Round(-num2 /( 2 * num1), 2);
 
-        Console.Write("\n\n'т.к D=0, то корень будет 1" +
+        Console.Write("\n\nт.к D=0, то корень будет 1" +
 
-            $"\n\nx1 =  -b    \t  -{num2}" +
-            $"\n    -----  =\t----- = {x1}" +
-            $"\n      2a         2*{num1} \n");
+            $"\n\nx1 =  -b      -{num2}" +
+            $"\n    -----  =  -----   =   {x1}" +
+            $"\n      2a       2*{num1} \n");
 
-        Console.WriteLine($"\n\nОтвет: x1={x1}\n");
+        Console.WriteLine($"\n\nОтвет: x= {x1}\n");
     }
 
-    else Console.WriteLine("т.к D<0 , то корней нету"); }
+    else Console.WriteLine("\n\nт.к D<0 , то корней не существует"); }
 
     //Быстрый ввод чисел
-void fastInput(string comand)
+void input(string comand)
 {
     float num1=0, num2=0, num3=0;
 
@@ -102,17 +105,22 @@ void fastInput(string comand)
         }
         catch
         {
-            Console.WriteLine("Вы неправльные ввели данные в команду 'finput'. \nПример ввода : 'finput 1,23 3 42,6'");
+            Console.WriteLine("Вы неправльные ввели данные в команду 'input'. \nПример ввода : 'input 1,23 3 42,6'");
             return;
         }
 
     }
 
     else 
-    { Console.WriteLine("Вы неправльные ввели количество чичел, 'input' ПРИМАЕТ ТОЛЬКО 3 ЦИФРЫ \nПример ввода: 'finput 213 3 32'");
+    { Console.WriteLine("Вы неправльные ввели количество чичел, 'input' ПРИМАЕТ ТОЛЬКО 3 ЦИФРЫ \nПример ввода: 'input 213 3 32'");
         return;
     }
 
+    if (num1== 0 || num2 ==0 || num3==0)
+    {
+        Console.WriteLine("Коэфиценты не должны равняться 0!!!");
+        return;
+    }
     if (flagSolution) resenieSolution(num1, num2, num3);
     else resenie(num1, num2, num3);
 
@@ -146,31 +154,6 @@ void example()
     Console.WriteLine($"Ответ: x1={x1} x2={x2}\n");
 }
 
-void solution(string flag)
-{
-    string[] flags = flag.Split(" ");
-    if (flags.Length == 2) {
-        if (flags[1] == "1")
-        {
-            flagSolution = true;
-            Console.WriteLine("Теперь решение будет показываться");
-        }
-        else if (flags[1] == "0") 
-        { 
-            flagSolution = false;
-            Console.WriteLine("Теперь решение не будет показываться");
-
-        }
-        else Console.WriteLine("'solution', может принимать только 0 или 1");
-
-        
-    }
-    else Console.WriteLine("Вы неправильно ввели коммнду 'solution', пример 'solution 1'");
-
-
-}
-
-
 
 // START PROGRAMM
 
@@ -182,9 +165,21 @@ while (true)
     var comand = Console.ReadLine();
 
     //Ввод пользователя
-    if (Regex.IsMatch(comand, "input")) fastInput(comand);
+    if (Regex.IsMatch(comand, "input")) input(comand);
 
-    else if (Regex.IsMatch(comand, "solution")) solution(comand);
+    //настройка solution
+    else if (comand =="1")
+    {
+        flagSolution = true;
+        Console.WriteLine("Теперь решение будет показываться");
+    }
+    else if (comand == "0")
+    {
+        flagSolution = false;
+        Console.WriteLine("Теперь решение не будет показываться");
+    }
+
+
     //Меню помощи
     else if (comand == "help") helpMenu();
     //Выхрд из программы
