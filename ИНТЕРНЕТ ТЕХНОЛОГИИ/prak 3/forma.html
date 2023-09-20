@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Форма-анкета для студента</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            text-align: center;
+        }
+        
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        
+        input[type="text"],
+        input[type="number"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            font-size: 16px;
+        }
+        
+        select {
+            height: 40px;
+        }
+        
+        textarea {
+            height: 150px;
+        }
+        
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Форма-анкета для студента</h1>
+        <form>
+            <label for="fullName">ФИО:</label>
+            <input type="text" id="fullName" name="fullName" required>
+
+            <label for="age">Возраст:</label>
+            <input type="number" id="age" name="age" required>
+
+            <label for="city">Город:</label>
+            <select id="city" name="city">
+                <option value="Темиртау">Темиртау</option>
+                <option value="Караганда">Караганда</option>
+                <option value="Астана">Астана</option>
+                <option value="Алматы">Алматы</option>
+                <option value="Шымкент">Шымкент</option>
+                <option value="Павлодар">Павлодар</option>
+                <option value="Костанай">Костанай</option>
+                <option value="Актобе">Актобе</option>
+                <option value="Атырау">Атырау</option>
+                <option value="Уральск">Уральск</option>
+            </select>
+
+
+            <label for="major">Специальность:</label>
+            <input type="text" id="major" name="major" required>
+
+            <label for="university">Университет:</label>
+            <input type="text" id="university" name="university" required>
+
+            <label for="interests">Сферы интересов:</label>
+            <input type="text" id="interests" name="interests" required>
+
+            <label for="additionalInfo">Дополнительная информация:</label>
+            <textarea id="additionalInfo" name="additionalInfo"></textarea>
+
+            <button type="submit" onclick="submitForm()">Отправить </button>
+        </form>
+    </div>
+
+    <div id="success-message" style="display: none;">
+        <h1>Вы отправили анкету!</h1>
+    </div>
+
+</body>
+
+<script>
+    function submitForm() {
+        // После успешной отправки формы, скрываем форму и отображаем сообщение.
+        document.querySelector('form').style.display = 'none';
+        document.getElementById('success-message').style.display = 'block';
+    }
+</script>
+
+</html>
