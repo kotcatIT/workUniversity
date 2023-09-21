@@ -1,3 +1,45 @@
+body {
+    margin-left: 80px;
+    /* Левый отступ */
+    margin-right: 60px;
+    /* Правый отступ */
+}
+
+
+/* Удаление рамок у таблицы */
+
+table {
+    border-collapse: collapse;
+}
+
+
+/* Центрирование таблицы */
+
+td.search {
+    text-align: center;
+    padding: 20px;
+    /* Добавляем внутренний отступ для центрирования */
+}
+
+
+/* Стили для текста студии */
+
+.studio-name {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+
+/* Стили для текста студии */
+
+.studio-name {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+
 /* Стили для макета */
 
 .layout {
@@ -178,15 +220,6 @@
 .ad {
     background-color: #f5f5f5;
     font-size: 18px;
-}
-
-
-/* Стили для реквизитов сайта */
-
-.footer {
-    background-color: #333;
-    color: white;
-    font-size: 16px;
 }
 
 
