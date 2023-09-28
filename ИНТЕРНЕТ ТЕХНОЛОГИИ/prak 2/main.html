@@ -16,7 +16,16 @@
             <!-- Левая часть шапки -->
             <td class="header-left"><img src="https://cdn.cookielaw.org/logos/1b21e05d-c206-4e0b-970e-2d73a23e42e8/45ca675a-89af-47ae-961e-92defd1c1a4a/12398e56-c069-4c7e-b0b6-a28e738bcb1e/WB_Logo.png" width="230" height="120"></td>
             <!-- Правая часть шапки -->
-
+            <td class="header-right">
+                <div>
+                    <h1>Лучшее киношка</h1>
+                </div>
+                <div>
+                    <form action="" method="GET">
+                        <input type="text" name="search" placeholder="Поиск...">
+                        <button type="submit">Найти</button>
+                    </form>
+                </div>
             </td>
 
 
@@ -30,7 +39,7 @@
                     <ul class="horizontal-menu">
                         <li><a href="#">Главная</a></li>
                         <li><a href="#">Фильмы</a></li>
-                        <li><a href="#">Сериалы</a></li>
+                        <li><a href="https://sso.kinopoisk.ru/install?uuid=2bff33ca-54e4-44f0-bc96-351f0af70d66">Сериалы</a></li>
                         <li><a href="#">Новости</a></li>
                     </ul>
                 </nav>
@@ -114,40 +123,62 @@
 
         <tr>
             <!-- Реклама -->
+            <!-- Реклама -->
             <td class="ad" colspan="2">
                 <!-- Баннер 1 -->
-                <a href="">
-                    <img src="baner.png" alt="Баннер рекламы 1" width="450" height="140">
+                <a href="" class="banner-link">
+                    <img src="baner.png" alt="Баннер рекламы 1" width="450" height="140" class="banner-image">
                 </a>
                 <!-- Баннер 2 -->
-                <a href="">
-                    <img src="baner.png" alt="Баннер рекламы 2" width="450" height="140">
+                <a href="" class="banner-link">
+                    <img src="baner.png" alt="Баннер рекламы 2" width="450" height="140" class="banner-image">
                 </a>
             </td>
+
         </tr>
 
-        <tr>
-            <!-- Социальные сети -->
-            <td class="social-media">
-                <!-- Здесь разместите иконки и ссылки на социальные сети -->
-                <a href="#"><img src="facebook.png" alt="Facebook"></a>
-                <a href="#"><img src="twitter.png" alt="Twitter"></a>
-                <a href="#"><img src="instagram.png" alt="Instagram"></a>
-            </td>
+        <table style=" margin-left: 14%; margin-right: 10%;">
+            <tr>
 
-            <!-- Информация о реквизитах сайта -->
-            <td class="footer">
-                <p>Номер телефона: <a href="tel:899999999">899999999</a></p>
-                <p>Адрес: Город, Улица, Дом</p>
-                <p>Почта: <a href="mailto:test@test">test@test</a></p>
-                <!-- Другая информация о реквизитах сайта -->
-            </td>
 
-            <!-- QR-код -->
-            <td class="qr-code">
-                <img src="qr-code.png" alt="QR Code">
-            </td>
-        </tr>
+
+                <td style="width: 20%; margin-right: 100px;"><img src="https://cdn.cookielaw.org/logos/1b21e05d-c206-4e0b-970e-2d73a23e42e8/45ca675a-89af-47ae-961e-92defd1c1a4a/12398e56-c069-4c7e-b0b6-a28e738bcb1e/WB_Logo.png" width="150" height="120"></td>
+
+                <!-- Первая таблица (45%) - Социальные сети -->
+                <td class="social-media" style="width: 28%; margin-left: 50px; margin-right: 50px">
+                    <!-- Здесь разместите иконки и ссылки на социальные сети -->
+                    <a href="https://facebook.com"><img src="https://www.facebook.com/images/fb_icon_325x325.png" alt="Facebook" width="50px" height="50px"></a>
+                    <a href="https://twitter.com/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Logo_of_Twitter.svg/2491px-Logo_of_Twitter.svg.png" alt="Twitter" width="50px" height="50px"></a>
+                    <a href="https://www.instagram.com/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/640px-Instagram_logo_2022.svg.png" alt="Instagram" width="50px" height="50px"></a>
+                </td>
+
+
+                <!-- Вторая таблица - вкладки -->
+                <td class="footer" style="width: 20%;">
+                    <ul style="list-style-type: none; padding: 0;">
+                        <li><a href="#" style="font-size: 20px; color: inherit; margin-bottom: 10px;">- Главная</a></li>
+                        <li><a href="#" style="font-size: 20px; color: inherit; margin-bottom: 10px;">- Фильмы</a></li>
+                        <li><a href="https://sso.kinopoisk.ru/install?uuid=2bff33ca-54e4-44f0-bc96-351f0af70d66" style="font-size: 20px; color: inherit; margin-bottom: 10px;">- Сериалы</a></li>
+                        <li><a href="#" style="font-size: 20px; color: inherit; margin-bottom: 10px;">- Новости</a></li>
+                    </ul>
+                </td>
+
+                <!-- Трпетья таблица ( - Информация о реквизитах сайта -->
+                <td class="footer" style="width: 45%;">
+                    <p style="font-size: 22px; color: inherit; ">Номер телефона:
+                        <a href="tel:899999999 ">899999999</a></p>
+                    <p style="font-size: 22px; color: inherit; ">Адрес: Город, Улица, Дом</p>
+                    <p style="font-size: 22px; color: inherit; ">Почта: <a href="mailto:test@test ">test@test</a></p>
+                    <!-- Другая информация о реквизитах сайта -->
+                </td>
+
+                <!-- Четвертая таблица (10%) - QR-код -->
+                <td class="qr-code " style="width: 30%; ">
+                    <a href="http://qrcoder.ru" target="_blank"><img src="http://qrcoder.ru/code/?https%3A%2F%2Fsso.kinopoisk.ru%2Finstall%3Fuuid%3D2bff33ca-54e4-44f0-bc96-351f0af70d66&4&0" width="180" height="180" title="QR код"></a>
+                </td>
+            </tr>
+        </table>
+
 
 
     </table>

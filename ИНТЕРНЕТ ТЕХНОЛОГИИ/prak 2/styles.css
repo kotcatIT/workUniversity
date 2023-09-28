@@ -1,5 +1,5 @@
 body {
-    margin-left: 80px;
+    margin-left: 60px;
     /* Левый отступ */
     margin-right: 60px;
     /* Правый отступ */
@@ -9,6 +9,10 @@ body {
 /* Удаление рамок у таблицы */
 
 table {
+    margin-left: 60px;
+    /* Левый отступ */
+    margin-right: 60px;
+    /* Правый отступ */
     border-collapse: collapse;
 }
 
@@ -242,4 +246,15 @@ td.search {
 
 .watch-more-button button:hover {
     background-color: #555;
+}
+
+.banner-link .banner-image {
+    /* Изменяет оттенок изображения на зеленый (120 градусов) */
+    transition: filter 0.3s ease;
+    /* Добавляет плавный переход при изменении стиля */
+}
+
+.banner-link:hover .banner-image {
+    filter: hue-rotate(120deg);
+    /* Возвращает изображение в изначальный зеленый цвет (0 градусов) */
 }
