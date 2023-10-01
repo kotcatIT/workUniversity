@@ -74,7 +74,7 @@
     <div class="container">
         <h1>Форма-анкета для студента</h1>
         <form>
-            <label for="fullName">ФИО:</label>
+            <label for="fullName">*ФИО:</label>
             <input type="text" id="fullName" name="fullName" required>
 
             <label for="age">Возраст:</label>
@@ -101,6 +101,13 @@
             <label for="university">Университет:</label>
             <input type="text" id="university" name="university" required>
 
+            <label for="phoneNumber">*Номер телефона:</label>
+            <input type="text" id="phoneNumber" name="phoneNumber" required>
+
+            <label for="email">*Электронная почта:</label>
+            <input type="text" id="email" name="email" required>
+
+
             <label for="interests">Сферы интересов:</label>
             <input type="text" id="interests" name="interests" required>
 
@@ -119,10 +126,20 @@
 
 <script>
     function submitForm() {
-        // После успешной отправки формы, скрываем форму и отображаем сообщение.
-        document.querySelector('form').style.display = 'none';
-        document.getElementById('success-message').style.display = 'block';
+        // Получаем значения полей "Электронная почта" и "Номер телефона"
+        var email = document.getElementById('email').value;
+        var phoneNumber = document.getElementById('phoneNumber').value;
+
+        // Проверяем, что оба поля заполнены
+        if (email === "" || phoneNumber === "") {
+            alert("Пожалуйста, заполните обязательные поля 'Электронная почта' и 'Номер телефона'.");
+        } else {
+            // После успешной отправки формы, скрываем форму и отображаем сообщение.
+            document.querySelector('form').style.display = 'none';
+            document.getElementById('success-message').style.display = 'block';
+        }
     }
 </script>
+
 
 </html>
