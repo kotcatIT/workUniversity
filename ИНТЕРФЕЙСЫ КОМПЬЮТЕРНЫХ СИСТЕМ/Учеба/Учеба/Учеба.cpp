@@ -1,17 +1,44 @@
 ﻿#include <iostream>
-#include <cmath>
-using namespace std;
+
 int main() {
-    int min = 100, max = 1;
-    const int biba = 15;
-    int num[biba]{ 1,2,321,4,543,124,5643,123,5,123,5,2,6,0,23444 };
-    for (int i = 0; i != biba; i++) {
+    int num1, chet = 0;
+    int* massive = nullptr; // Инициализируем указатель как nullptr
 
-        if (min > num[i]) min = num[i];
-        if (max < num[i]) max = num[i];
+    while (true) {
+        std::cin >> num1;
+        if (num1 == -1) break;
 
+        // Увеличиваем размер массива на 1 и копируем новое значение
+        int* temp = new int[chet + 1];
+        for (int i = 0; i < chet; i++) {
+            temp[i] = massive[i];
+        }
+        temp[chet] = num1;
+        chet++;
+
+        // Удаляем старый массив и обновляем указатель
+        delete[] massive;
+        massive = temp;
     }
-    cout << min << endl;
-    cout << max << endl;
+
+    // Сортировка пузырьком
+    for (int i = 0; i < chet - 1; i++) {
+        for (int j = 0; j < chet - i - 1; j++) {
+            if (massive[j] > massive[j + 1]) {
+                // Обмен элементов
+                int temp = massive[j];
+                massive[j] = massive[j + 1];
+                massive[j + 1] = temp;
+            }
+        }
+    }
+
+    for (int i = 0; i < chet; i++) {
+        std::cout << massive[i] << " ";
+    }
+
+    // Освобождение выделенной памяти
+    delete[] massive;
+
     return 0;
 }

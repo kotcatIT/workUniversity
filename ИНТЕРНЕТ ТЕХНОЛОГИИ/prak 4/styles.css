@@ -1,0 +1,243 @@
+    /* Обнуляем отступы и поля у элементов */
+    
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        margin-left: 150px;
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin-right: 120px;
+    }
+    
+    body h1 {
+        position: relative;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    header {
+        background-color: #007bff;
+        color: #fff;
+        text-align: center;
+        padding: 20px;
+    }
+    
+    nav ul {
+        list-style: none;
+        padding: 0;
+    }
+    
+    nav ul li {
+        display: inline;
+        margin-right: 20px;
+    }
+    
+    nav ul li a {
+        text-decoration: none;
+        color: #fff;
+        font-weight: bold;
+    }
+    
+    .products {
+        padding: 20px;
+    }
+    
+    footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+    }
+    /* Добавьте стили для отображения товаров и другие элементы дизайна по вашему усмотрению */
+    /* Стили для слайдера */
+    
+    .slider {
+        margin: 20px 0;
+        overflow: hidden;
+    }
+    
+    .slider-container {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .slide {
+        flex: 0 0 auto;
+        width: 350px;
+        /* Изменено на 400px */
+        height: 350px;
+        /* Изменено на 400px */
+        margin-right: 10px;
+        scroll-snap-align: start;
+        text-align: center;
+        background-color: #f0f0f0;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+    
+    .slide img {
+        max-width: 200px;
+        /* Изменено на 200px */
+        width: auto;
+        height: auto;
+        margin-bottom: 10px;
+    }
+    /* Стили для заголовков и описания акций */
+    
+    .slide h3 {
+        font-size: 18px;
+        margin: 10px 0;
+    }
+    
+    .slide p {
+        text-align: justify;
+        font-size: 14px;
+    }
+    /* Стили для боковой панели */
+    
+    .sidebar {
+        width: 130px;
+        position: fixed;
+        z-index: 1;
+        top: 20px;
+        left: 10px;
+        background: #eee;
+        overflow-x: hidden;
+        padding: 8px 0;
+    }
+    
+    .category-list {
+        list-style-type: none;
+        padding: 0;
+    }
+    
+    .category-list li {
+        margin-bottom: 10px;
+    }
+    
+    .category-list a {
+        padding: 6px 8px 6px 16px;
+        text-decoration: none;
+        font-size: 15px;
+        color: #2196F3;
+        display: block;
+    }
+    
+    .category-list a:hover {
+        color: #007bff;
+    }
+    /* Стили для списка товаров */
+    
+    .product-section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 20px 0;
+    }
+    
+    .product {
+        width: calc(33.33% - 10px);
+        /* Треть ширины контейнера товаров с небольшим отступом между ними */
+        margin-bottom: 20px;
+        text-align: center;
+        background-color: #f0f0f0;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+    
+    .product img {
+        width: 250px;
+        height: auto;
+        margin-bottom: 10px;
+    }
+    
+    .product h2 {
+        font-size: 18px;
+        margin: 10px 0;
+    }
+    
+    .product p {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+    
+    .product button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    
+    .product button:hover {
+        background-color: #0056b3;
+    }
+    /* Стили для блока новостей */
+    
+    .news-section {
+        margin: 20px 0;
+        padding: 20px;
+        background-color: #f0f0f0;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+    
+    .news h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    
+    .news {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .news-item {
+        flex: 0 0 auto;
+        width: calc(33.33% - 10px);
+        /* Треть ширины контейнера новостей с небольшим отступом между ними */
+        text-align: center;
+    }
+    
+    .news-item img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+    }
+    
+    .news-item h3 {
+        font-size: 18px;
+        margin: 10px 0;
+    }
+    
+    .news-item p {
+        font-size: 14px;
+        margin-bottom: 10px;
+        text-align: justify;
+    }
+    
+    .news-item a {
+        margin-top: 10px;
+        background-color: #007bff;
+        color: #fff;
+        text-decoration: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+    
+    .news-item a:hover {
+        background-color: #0056
+    }
