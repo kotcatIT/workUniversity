@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Лабораторная работа №10</title>
+</head>
+
+<body>
+    <font color="green">
+        <strong>
+            <h1>Задание №1</h1>
+            <hr>
+        </strong>
+    </font>
+    <font size="3" color="black" face="Courier New">
+        <p>Треугольник задан величинами углов и радиусом описанной окружности. Найти стороны треугольника</p>
+    </font>
+    <font size="4" color="teal">
+        <p>Введите Угол A:</p> <input type="text" value="" name="num1">
+        <p>Введите Угол B:</p> <input type="text" value="" name="num2">
+        <p>Введите Угол C:</p> <input type="text" value="" name="num3">
+
+        <br><br>
+        <input type="button" value="Расчет" name="make" onclick="count()">
+        <p>Результат</p>
+        <input type="text" readonly="true" value="" name="rez1">
+
+    </font>
+
+
+
+
+    <font color="green">
+        <strong>
+            <h1>Задание №2</h1>
+            <hr>
+        </strong>
+    </font>
+    <font size="3" color="black" face="Courier New">
+        <p>Даны 3 вещественных числа. Определить, образуют ли они возрастающую последовательность
+        </p>
+    </font>
+    <font size="4" color="teal">
+        <p>Введите число</p>
+        <input type="text" value="" name="num">
+        <br><br>
+        <input type="button" value="Расчет" name="make" onclick="count()">
+        <p>Результат</p>
+        <input type="text" readonly="true" value="" name="rez2">
+    </font>
+
+    <!-- Добавляем скрипт для расчета -->
+    <script>
+        function count() {
+            // Получаем значение N из поля ввода
+            let num1 = document.getElementsByName("num1")[0];
+            let num2 = document.getElementsByName("num2")[0];
+            let num3 = document.getElementsByName("num3")[0];
+
+            let r = 5.0;
+
+
+            let N = parseInt(numInput.value);
+
+            // Выполняем расчет суммы четных чисел
+            var sum = 0;
+            for (var i = 2; i <= N; i += 2) {
+                sum += i;
+            }
+
+            // Выводим результат в поле rez
+            var rezInput = document.getElementsByName("rez")[0];
+            rezInput.value = sum;
+        }
+
+        function zadania2() {
+
+        }
+    </script>
+</body>
+
+</html>
