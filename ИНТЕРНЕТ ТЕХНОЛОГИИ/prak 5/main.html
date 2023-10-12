@@ -23,7 +23,8 @@
         <br><br>
         <input type="button" value="Расчет" name="make" onclick="count()">
         <p>Результат</p>
-        <input type="text" readonly="true" value="" name="rez1">
+        <label id="rez1"></label>
+        <!-- Используем label для вывода результата -->
 
     </font>
 
@@ -40,40 +41,62 @@
         <p>Даны 3 вещественных числа. Определить, образуют ли они возрастающую последовательность
         </p>
     </font>
-    <font size="4" color="teal">
-        <p>Введите число</p>
-        <input type="text" value="" name="num">
+    <font size="4" color="tea;l">
+        <p>Введите 1-ое число:</p> <input type="text" value="" name="num11">
+        <p>Введите 2-ое число:</p> <input type="text" value="" name="num22">
+        <p>Введите 3-ое число :</p> <input type="text" value="" name="num33">
+
         <br><br>
-        <input type="button" value="Расчет" name="make" onclick="count()">
+        <input type="button" value="Расчет" name="make" onclick="zadania2()">
         <p>Результат</p>
-        <input type="text" readonly="true" value="" name="rez2">
+        <label id="rez2"></label>
+        <!-- Используем label для вывода результата -->
+
     </font>
+
 
     <!-- Добавляем скрипт для расчета -->
     <script>
         function count() {
             // Получаем значение N из поля ввода
-            let num1 = document.getElementsByName("num1")[0];
-            let num2 = document.getElementsByName("num2")[0];
-            let num3 = document.getElementsByName("num3")[0];
+            let num1 = parseFloat(document.getElementsByName("num1")[0].value);
+            let num2 = parseFloat(document.getElementsByName("num2")[0].value);
+            let num3 = parseFloat(document.getElementsByName("num3")[0].value);
 
-            let r = 5.0;
+            let R = 5.0;
 
+            let A_radians = num1 * Math.PI / 180.0;
+            let B_radians = num2 * Math.PI / 180.0;
+            let C_radians = num3 * Math.PI / 180.0;
 
-            let N = parseInt(numInput.value);
+            // Вычисляем длины сторон треугольника
+            let BC = 2 * R * Math.sin(A_radians);
+            let AC = 2 * R * Math.sin(B_radians);
+            let AB = 2 * R * Math.sin(C_radians);
 
-            // Выполняем расчет суммы четных чисел
-            var sum = 0;
-            for (var i = 2; i <= N; i += 2) {
-                sum += i;
+            // Выводим результат в элемент label
+            var rezLabel = document.getElementById("rez1");
+            if (!isNaN(BC) && !isNaN(AC) && !isNaN(AB)) {
+                rezLabel.textContent = `Сторона BC = ${BC.toFixed(2)}, Сторона AC = ${AC.toFixed(2)}, Сторона AB = ${AB.toFixed(2)}`;
+            } else {
+                rezLabel.textContent = "Невозможно вычислить стороны треугольника с заданными углами.";
             }
-
-            // Выводим результат в поле rez
-            var rezInput = document.getElementsByName("rez")[0];
-            rezInput.value = sum;
         }
 
         function zadania2() {
+            let num1 = parseFloat(document.getElementsByName("num11")[0].value);
+            let num2 = parseFloat(document.getElementsByName("num22")[0].value);
+            let num3 = parseFloat(document.getElementsByName("num33")[0].value);
+
+            var rezLabel = document.getElementById("rez2");
+
+            if (num1 < num2 && num2 < num3) {
+                rezLabel.textContent = `Числа возрастающие`;
+            } else if (num1 == num2 && num2 == num3) {
+                rezLabel.textContent = "Они раны друг другу ";
+            } else {
+                rezLabel.textContent = "Они не возрастают:( ";
+            }
 
         }
     </script>
