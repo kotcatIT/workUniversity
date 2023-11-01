@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Калькулятор</title>
+    <style>
+        body {
+            zoom: 3;
+            /* Увеличиваем все элементы в 3 раза */
+        }
+        
+        #linkForm {
+            position: absolute;
+            left: 500px;
+            top: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="number" id="num1">
+    <input type="number" id="num2">
+    <button onmouseover="status='Сложение'" onclick="calculate('+')">+</button>
+    <button onmouseover="status='Вычитание'" onclick="calculate('-')">-</button>
+    <button onmouseover="status='Умножение'" onclick="calculate('*')">*</button>
+    <button onmouseover="status='Деление'" onclick="calculate('/')">/</button>
+    <div id="result"></div>
+
+    <script>
+        function calculate(op) {
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+            let res;
+            switch (op) {
+                case '+':
+                    res = num1 + num2;
+                    break;
+                case '-':
+                    res = num1 - num2;
+                    break;
+                case '*':
+                    res = num1 * num2;
+                    break;
+                case '/':
+                    res = num1 / num2;
+                    break;
+            }
+            document.getElementById('result').textContent = `Результат: ${res}`;
+        }
+    </script>
+
+
+    <form id="linkForm" action="index.html">
+        <button>Вернуться назад</button>
+    </form>
+</body>
+
+</html>

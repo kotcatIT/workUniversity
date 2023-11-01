@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проверка на четность</title>
+    <style>
+        body {
+            zoom: 3;
+            /* Увеличиваем все элементы в 3 раза */
+        }
+    </style>
+</head>
+
+<body>
+    <br>
+    <button onclick="checkEvenness()">Проверить число</button>
+    <br>
+    <img id="resultImage" src="1.png" alt="Изображение">
+    <script src="script.js"></script>
+</body>
+<script>
+    function checkEvenness() {
+        const input = prompt('Введите шестизначное число:');
+        if (isNaN(parseInt(input))) {
+            alert('Это не число!');
+            return;
+        }
+        const digits = input.split('').map(Number);
+
+        if (digits[0] + digits[1] + digits[2] === digits[3] + digits[4] + digits[5]) {
+            document.getElementById('resultImage').src = '2.png';
+            alert('HAPPY число');
+        } else {
+
+            document.getElementById('resultImage').src = '3.png';
+            alert('BAD число');
+        }
+
+
+
+
+    }
+</script>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Переключатель текста</title>
+    <style>
+        body {
+            zoom: 3;
+            /* Увеличиваем все элементы в 3 раза */
+        }
+        
+        #linkForm {
+            position: absolute;
+            left: 500px;
+            top: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div onmouseover="status='Выбор цвета текста'; return true;" onmouseout="window.status=''; return true;">
+        Цвет текста:
+        <input type="radio" name="textColor" value="red" onchange="changeTextColor('red')" onmouseover="window.status='Красный цвет'; return true;" onmouseout="window.status=''; return true;"> Красный
+        <input type="radio" name="textColor" value="blue" onchange="changeTextColor('blue')" onmouseover="window.status='Синий цвет'; return true;" onmouseout="window.status=''; return true;"> Синий
+        <input type="radio" name="textColor" value="green" onchange="changeTextColor('green')" onmouseover="window.status='Зеленый цвет'; return true;" onmouseout="window.status=''; return true;"> Зеленый
+    </div>
+    <br>
+    <input type="text" id="sampleText"></input>
+
+
+
+    <form id="linkForm" action="index.html">
+        <button>Вернуться назад</button>
+    </form>
+    <script>
+        function changeTextColor(color) {
+            document.getElementById('sampleText').style.color = color;
+        }
+    </script>
+</body>
+
+</html>

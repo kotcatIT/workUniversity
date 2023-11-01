@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Динамическое время и цвет</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            transition: background-color 0.5s, color 0.5s;
+        }
+        
+        #timeDisplay {
+            font-size: 3em;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="timeDisplay"></div>
+    <script>
+        function getRandomColor() {
+            // РАНДОМНЫЙ ЦВЕТ
+            const letters = '0123456789ABCDEF'; //СПИСОК СИМВОЛОВ ДЛЯ СОЗДАНИИЕ РАНДОМА
+            let color = '#';
+            for (let i = 0; i < 6; i++) { // 6 рандомных букв
+                color += letters[Math.floor(Math.random() * 16)]; //Рандомная буква
+            }
+            return color;
+        }
+
+        function updateDisplay() {
+            const now = new Date(); // текущая дата
+            const hours = now.getHours().toString().padStart(2, '0'); // получаю час
+            const minutes = now.getMinutes().toString().padStart(2, '0'); // получаю минуту
+            const seconds = now.getSeconds().toString().padStart(2, '0'); // получаю секунду
+            const formattedTime = `${hours}:${minutes}:${seconds}`; // текст в виде таймера 
+
+            document.body.style.backgroundColor = getRandomColor(); // получаю рандомный цвет и присваиваю его в задний фон style css
+            document.body.style.color = getRandomColor(); // получаю рандомный цвет и присваиваю его в цвет текста style css
+            document.getElementById('timeDisplay').textContent = formattedTime; // присваиваю измененный текст в timeDisplay.
+        }
+
+        setInterval(updateDisplay, 1000);
+    </script>
+    <br>
+    <form id="linkForm" action="index.html">
+        <button>Вернуться назад</button>
+    </form>
+</body>
+
+</html>
